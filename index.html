@@ -15,7 +15,9 @@
 			<section id="main">
 				<input id="toggle-all" type="checkbox">
 				<label for="toggle-all">Mark all as complete</label>
-				<ul id="todo-list"></ul>
+				<ul id="todo-list">
+
+				</ul>
 			</section>
 			<footer id="footer"></footer>
 		</section>
@@ -27,7 +29,7 @@
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-				<label><%- title %></label>
+				<label><%- title %><%= completed ? '-- done!' : '' %></label>
 				<button class="destroy"></button>
 			</div>
 			<input class="edit" value="<%- title %>">
@@ -47,6 +49,7 @@
 			</ul>
 			<% if (completed) { %>
 			<button id="clear-completed">Clear completed (<%= completed %>)</button>
+
 			<% } %>
 		</script>
 		<script src="bower_components/todomvc-common/base.js"></script>
